@@ -8,16 +8,14 @@
 
 import UIKit
 
-
-
-
-class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class SelectViewController: UIViewController, UITextFieldDelegate {
 
     var characterResults: [Character] = []
+    var resultsCount = 0
+
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
-    
     
     @IBAction func goButtonPressed(_ sender: Any) {
         if let character = searchTextField.text {
@@ -26,24 +24,14 @@ class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.characterResults.append(result)
                     print("\(result)\n\n")
                 }
-            
             self.tableView.reloadData()
-            
             }
         }
     }
-    var resultsCount = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       /* Character.characterDetail(for: "Iron") { (results: [Character]) in
-            for result in results {
-                print("\(result)\n\n")
-                print("*****Number of Results: \(results.count)")
- 
- 
-            }
-        } */
+  
         tableView.dataSource = self
         tableView.delegate = self
         searchTextField.delegate = self
@@ -53,14 +41,11 @@ class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(gestureRecognizer)
-        
-        
     }
 
     @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer) {
         searchTextField.resignFirstResponder()
         print("Touching!")
-        
     }
     
     
@@ -69,34 +54,31 @@ class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return false
     }
     
-    
-    
-    
     func searchCharacter() {
-        
     }
     
-    
-    // MARK: - Table View Delegates
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
-        
-        cell.textLabel?.text = characterResults[0].name
-        
-        return cell
-        
-    }
+}
+
+
+
+extension SelectViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected row \(indexPath)")
     }
-    
-    
-
 }
 
+
+
+extension SelectViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return characterResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
+        cell.textLabel?.text = characterResults[0].name
+        return cell
+    }
+}

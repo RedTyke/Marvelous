@@ -27,7 +27,6 @@
 		5265182121249C6500498252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5265182421249C6500498252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5265182621249C6500498252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5265182C21249C9C00498252 /* Marvel_logic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Marvel_logic.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5282EB9621285694003FA824 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		89DEF446952569754A849CEB /* Pods-Marvelous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvelous.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvelous/Pods-Marvelous.debug.xcconfig"; sourceTree = "<group>"; };
 		E3FAD39D7FD6DA4DFF0FF123 /* Pods_Marvelous.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvelous.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +73,6 @@
 				5265182121249C6500498252 /* Assets.xcassets */,
 				5265182321249C6500498252 /* LaunchScreen.storyboard */,
 				5265182621249C6500498252 /* Info.plist */,
-				5265182C21249C9C00498252 /* Marvel_logic.playground */,
 			);
 			path = Marvelous;
 			sourceTree = "<group>";
@@ -359,7 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SW7JTJMJ34;
+				DEVELOPMENT_TEAM = L75BZ5LCW2;
 				INFOPLIST_FILE = Marvelous/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,7 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SW7JTJMJ34;
+				DEVELOPMENT_TEAM = L75BZ5LCW2;
 				INFOPLIST_FILE = Marvelous/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
